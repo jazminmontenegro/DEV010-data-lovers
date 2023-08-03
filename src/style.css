@@ -1,0 +1,51 @@
+
+header{
+
+  height: 400px;
+  overflow: hidden;
+  /*border: 5px solid darkblue;*/
+
+}
+.banner{
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: 15%;
+
+
+
+}
+.dragon{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+body {
+  background-color: rgb(206, 164, 79);
+
+}
+
+figure {
+  border: thin #111010 solid;
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+  max-width: 220px;
+  margin: auto;
+}
+img {
+  max-width: 220px;
+  max-height: 150px;
+}
+
+figcaption {
+  background-color: #222;
+  color: #fff;
+  font: italic smaller sans-serif;
+  padding: 3px;
+}
+
+
+ .card{
+  border: #111010;
+ }
+
