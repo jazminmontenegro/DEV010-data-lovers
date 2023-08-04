@@ -1,29 +1,128 @@
-
-header{
-
-  height: 400px;
-  overflow: hidden;
-  /*border: 5px solid darkblue;*/
-
+/*Headers*/
+header {
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  background-color: white;
 }
-.banner{
+.logo {
+  width: 30%;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+p{
+  text-align: center;
+}
+
+nav {
+  background-color: black;
+  padding-top:0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left:2rem ;
+}
+
+#navigator ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content:right;
+}
+
+#navigator li {
+  display: flex; 
+  align-items: center; 
+  margin-right: 10px; 
+}
+
+/*.banner{
   max-width: 100%;
   max-height: 100%;
   margin-left: 15%;
-
-
-
 }
 .dragon{
   max-width: 100%;
   max-height: 100%;
+}*/
+
+/*CONTENTS*/
+
+main {
+  width: 100%;
+   /* esta medida solo esta colocada para observar mejor el dise;o, mientras aparecen las cards*/
+  background-color: rgb(214, 170, 139);
+  background-image: url(westeros.jpg);
+  background-size: cover;
+  background-blend-mode: soft-light;
 }
 
-body {
-  background-color: rgb(206, 164, 79);
-
+h1{
+  text-align: center;
+  margin-top: 0rem;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
 }
 
+h3{
+  margin-top: 0rem;
+  padding-top: 0rem;
+  text-align: right;
+  margin-right: 10%;
+}
+
+#characters {  /*esto se saca cuando est[en las cartas*/
+  height:200px;
+  }
+
+  #counter {
+    padding-bottom: 1rem;
+  }
+  
+h2 {
+  text-align: center;
+}
+
+/*HIDDEN SECTION*/
+
+aside {
+  background-color: black;
+  color:rgb(253, 254, 254);
+  max-height: 200px;
+  min-height: 200px;
+}
+
+#container {
+ margin-left: 15%;
+ padding-top: 0rem;
+ padding-bottom: 0rem;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+  }
+
+#shield {
+  width: 30%;
+  height: 200px;
+  padding:0rem;
+  }
+
+  h4{
+    text-justify: distribute-all-lines;
+  }
+  #history {
+    width:60%;
+    padding:1rem;
+    padding-left:0rem;
+    margin:0rem;
+  }
+
+  footer {
+    padding-top: 1rem;
+  }
+
+  /*NO SE DONDE VAN*/
 figure {
   border: thin #111010 solid;
   display: flex;
@@ -32,10 +131,6 @@ figure {
   max-width: 220px;
   margin: auto;
 }
-img {
-  max-width: 220px;
-  max-height: 150px;
-}
 
 figcaption {
   background-color: #222;
@@ -43,7 +138,6 @@ figcaption {
   font: italic smaller sans-serif;
   padding: 3px;
 }
-
 
  .card{
   border: #111010;
