@@ -3,11 +3,26 @@
 Body{
   font-family: 'Courgette', cursive;
 }
+
 header {
   min-height: 200px;
   display: flex;
+}
+*{
+  margin: 0px;
+  padding: 0px;
+}
+header{
+
+  width: 100%;
+  height: 300px;
+  background: white;
   justify-content: center;
-  background-color: white;
+  align-items: center;
+  background-size: cover;
+  display: flex;
+
+
 }
 .logo {
   width: 30%;
@@ -35,38 +50,15 @@ nav {
 }
 
 #navigator li {
-  display: flex; 
-  align-items: center; 
-  margin-right: 10px; 
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
 }
 
-/*.banner{
+.banner{
   max-width: 100%;
   max-height: 100%;
-  margin-left: 15%;
-}
-.dragon{
-  max-width: 100%;
-  max-height: 100%;
-}*/
-
-/*CONTENTS*/
-
-main {
-  width: 100%;
-   /* esta medida solo esta colocada para observar mejor el dise;o, mientras aparecen las cards*/
-  background-color: rgb(214, 170, 139);
-  background-image: url(westeros.jpg);
-  background-size: cover;
-  background-blend-mode: soft-light;
-}
-
-h1{
-  text-align: center;
-  margin-top: 0rem;
-  padding-top: 2rem;
-  padding-bottom: 0rem;
-  margin-bottom: 0rem;
+  display: flex;
 }
 
 h3{
@@ -84,7 +76,7 @@ h3{
   #counter {
     padding-bottom: 1rem;
   }
-  
+
 h2 {
   text-align: center;
 }
@@ -130,11 +122,20 @@ aside {
   /*NO SE DONDE VAN*/
 figure {
   border: thin #111010 solid;
-  display: flex;
+  display:flex;
   flex-flow: column;
   padding: 5px;
   max-width: 220px;
-  margin: auto;
+  margin: 10px;
+
+
+
+}
+.imagen {
+  width: 220px;
+  height: 150px;
+  object-fit : cover;
+
 }
 
 figcaption {
@@ -142,9 +143,105 @@ figcaption {
   color: #fff;
   font: italic smaller sans-serif;
   padding: 3px;
+  text-align: center;
 }
 
  .card{
+  display:flex;
+  padding: 20px;
   border: #111010;
- }
+  flex-flow:row wrap;
+  justify-content:center;
+  align-content: center;
+  max-width: 80%;
+  margin-left: 10%;
 
+ }
+ nav {
+  background-color: black;
+  padding-top:0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left:2rem ;
+}
+
+#navigator ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content:right;
+}
+
+#navigator li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+main {
+  width: 100%;
+   /* esta medida solo esta colocada para observar mejor el dise;o, mientras aparecen las cards*/
+  background-color: rgb(236, 176, 133);
+  background-image: url(data/imagenes/westeros.jpg);
+  background-size: cover;
+  background-blend-mode: soft-light;
+}
+p{
+  text-align: center;
+}
+h1{
+  text-align: center;
+  margin-top: 0rem;
+  padding-top: 2rem;
+  padding-bottom: 0rem;
+  margin-bottom: 0rem;
+}
+
+h3{
+  margin-top: 0rem;
+  padding-top: 0rem;
+  text-align: right;
+  margin-right: 10%;
+}
+
+#counter {
+  padding-bottom: 1rem;
+}
+
+h2 {
+text-align: center;
+}
+aside {
+  background-color: black;
+  color:rgb(253, 254, 254);
+  max-height: 200px;
+  min-height: 200px;
+}
+
+#container {
+ margin-left: 15%;
+ padding-top: 0rem;
+ padding-bottom: 0rem;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+  }
+
+#shield {
+  width: 30%;
+  height: 200px;
+  padding:0rem;
+  }
+
+  h4{
+    text-justify: distribute-all-lines;
+  }
+  #history {
+    width:60%;
+    padding:1rem;
+    padding-left:0rem;
+    margin:0rem;
+  }
+
+  footer {
+    padding-top: 1rem;
+  }
