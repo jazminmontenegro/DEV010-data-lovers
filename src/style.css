@@ -1,4 +1,8 @@
 /*Headers*/
+
+Body{
+  font-family: 'Courgette', cursive;
+}
 header {
   min-height: 200px;
   display: flex;
@@ -72,8 +76,9 @@ h3{
   margin-right: 10%;
 }
 
-#characters {  /*esto se saca cuando est[en las cartas*/
-  height:200px;
+#characters {  /*esto se saca cuando esten las cartas*/
+  display: flex;
+  flex-wrap: wrap;
   }
 
   #counter {

@@ -1,8 +1,5 @@
-//import { example } from './data.js';
-// import data from './data/lol/lol.js';
-//import data from './data/pokemon/pokemon.js';
-// import data from './data/rickandmorty/rickandmorty.js';
 import data from './data/got/got.js';
+//import dataMotto from "./src/data/got/motto.js";
 
 
 const container= document.querySelector('.card')
@@ -13,3 +10,20 @@ for (let i=0 ; i<data.got.length; i++){
   <figcaption>${data.got[i].firstName}</figcaption>
   </figure>`
 }
+
+
+//Funciones para selector de familia
+
+/*function familyselect(selection, ){
+  for (let i=0 ; i<dataMotto.motto.length; i++){
+    console.log(selection);
+  }
+}
+//CONSTANTES NECESARIAS PARA MOSTRAR POR CASA
+
+
+let selection = document.getElementById(family.value)
+selection = selection.addEventListener('change',familyselect)
+
+//Eventos relacionados
+*/
