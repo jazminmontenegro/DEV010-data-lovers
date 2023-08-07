@@ -14,12 +14,98 @@ header{
 
 
 }
+.logo {
+  width: 30%;
+  padding: 0rem;
+  margin: 0rem;
+}
+
+p{
+  text-align: center;
+}
+
+nav {
+  background-color: black;
+  padding-top:0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left:2rem ;
+}
+
+#navigator ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content:right;
+}
+
+#navigator li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
 .banner{
   max-width: 100%;
   max-height: 100%;
   display: flex;
 }
 
+h3{
+  margin-top: 0rem;
+  padding-top: 0rem;
+  text-align: right;
+  margin-right: 10%;
+}
+
+
+  #counter {
+    padding-bottom: 1rem;
+  }
+
+h2 {
+  text-align: center;
+}
+
+/*HIDDEN SECTION*/
+
+aside {
+  background-color: black;
+  color:rgb(253, 254, 254);
+  max-height: 200px;
+  min-height: 200px;
+}
+
+#container {
+ margin-left: 15%;
+ padding-top: 0rem;
+ padding-bottom: 0rem;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+  }
+
+#shield {
+  width: 30%;
+  height: 200px;
+  padding:0rem;
+  }
+
+  h4{
+    text-justify: distribute-all-lines;
+  }
+  #history {
+    width:60%;
+    padding:1rem;
+    padding-left:0rem;
+    margin:0rem;
+  }
+
+  footer {
+    padding-top: 1rem;
+  }
+
+  /*NO SE DONDE VAN*/
 figure {
   border: thin #111010 solid;
   display:flex;
@@ -45,7 +131,6 @@ figcaption {
   padding: 3px;
   text-align: center;
 }
-
 
  .card{
   display:flex;
