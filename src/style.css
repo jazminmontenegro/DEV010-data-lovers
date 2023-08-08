@@ -1,8 +1,11 @@
+/*Headers*/
+
 *{
   margin: 0px;
   padding: 0px;
   font-family: 'Courgette', cursive;
 }
+
 header{
 
   width: 100%;
@@ -12,7 +15,6 @@ header{
   align-items: center;
   background-size: cover;
   display: flex;
-
 
 }
 .logo {
@@ -59,9 +61,13 @@ h3{
   margin-right: 10%;
 }
 
+#characters {  
+  display: flex;
+  flex-wrap: wrap;
+  }
 
   #counter {
-    padding-bottom: 1rem;
+    padding: 1rem;
   }
 
 h2 {
@@ -75,6 +81,7 @@ aside {
   color:rgb(253, 254, 254);
   max-height: 200px;
   min-height: 200px;
+  font-size: 1.3rem;
 }
 
 #container {
