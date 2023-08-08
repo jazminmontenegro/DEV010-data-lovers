@@ -1,6 +1,8 @@
 import data from './data/got/got.js';
-//import dataMotto from "./src/data/got/motto.js";
 
+fetch(`./data/got/motto.json`)
+  .then(response => response.json())
+  //.then(dataMotto => console.log(dataMotto));
 
 const container= document.querySelector('.card')
 for (let i=0 ; i<data.got.length; i++){
@@ -11,19 +13,40 @@ for (let i=0 ; i<data.got.length; i++){
   </figure>`
 }
 
-
 //Funciones para selector de familia
 
-/*function familyselect(selection, ){
-  for (let i=0 ; i<dataMotto.motto.length; i++){
-    console.log(selection);
-  }
-}
-//CONSTANTES NECESARIAS PARA MOSTRAR POR CASA
+//function familyselect(){
+//for (let i=0 ; i<data.motto.length; i++){
+//}
 
 
-let selection = document.getElementById(family.value)
-selection = selection.addEventListener('change',familyselect)
+//SELECTORES
 
-//Eventos relacionados
-*/
+const search =document.getElementById("search")
+const buttonSearch=document.getElementById("btnsearch")
+buttonSearch.addEventListener("click", function () {
+  const searched=search.value;
+  console.log(searched);
+})
+
+const familySelection=document.getElementById("house")
+familySelection.addEventListener("change", function(){
+  const selectedHouse =familySelection.value;
+  console.log (selectedHouse);
+});
+
+const orderSelection=document.getElementById("order")
+orderSelection.addEventListener("change", function(){
+  const selectedOrder =orderSelection.value;
+  console.log (selectedOrder);
+});
+
+//const family=document.getElementById("house")
+//let familySelection=document.getElementById(family.value="general")
+//
+
+
+//const familyWords = document.querySelector('.words')
+//const autor = document.querySelector('.autor')
+//const shield= document.getElementById(shield)
+//const familyHistory= document.getElementById(history)
