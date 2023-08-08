@@ -113,7 +113,6 @@ aside {
     padding-top: 1rem;
   }
 
-  /*NO SE DONDE VAN*/
 figure {
   border: thin #111010 solid;
   display:flex;
@@ -121,10 +120,8 @@ figure {
   padding: 5px;
   max-width: 220px;
   margin: 10px;
-
-
-
 }
+
 .imagen {
   width: 220px;
   height: 150px;
@@ -147,8 +144,8 @@ figcaption {
   flex-flow:row wrap;
   justify-content:center;
   align-content: center;
-  max-width: 80%;
-  margin-left: 10%;
+  max-width: 50%;
+  margin-left: 23%;
 
  }
  nav {
@@ -199,6 +196,7 @@ h3{
 
 #counter {
   padding-bottom: 1rem;
+  text-align: center;
 }
 
 h2 {
@@ -206,6 +204,7 @@ text-align: center;
 }
 aside {
   background-color: black;
+  font-size: 1.3rem;
   color:rgb(253, 254, 254);
   max-height: 200px;
   min-height: 200px;
@@ -238,4 +237,37 @@ aside {
 
   footer {
     padding-top: 1rem;
+
+  }
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 16px 16px;
+
+
+  }
+
+  a:hover {
+    background-color: #ddd;
+    color: black;
+
+  }
+
+  .previous {
+    background-color: #f1f1f1;
+    color: black;
+
+
+
+  }
+
+  .next {
+    background-color: #30312d;
+    color: white;
+
+  }
+
+  .round {
+    border-radius: 50%;
+
   }
