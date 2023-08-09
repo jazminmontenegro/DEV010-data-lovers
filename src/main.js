@@ -1,8 +1,14 @@
+//IMPORTACION DE BASES DE DATOS Y OTROS ARCHIVOS
+
 import data from './data/got/got.js';
+import searcher from "./data.js"
+import { houseFilter } from './data.js';
 
 fetch(`./data/got/motto.json`)
   .then(response => response.json())
-  //.then(dataMotto => console.log(dataMotto));
+
+//VISUALIZACIÓN Y PAGINACIÓN
+//Constantes necesarias
 
 const container = document.querySelector('.card')
 const previous = document.querySelector('.previous')
@@ -13,10 +19,9 @@ const itemPag = 12;     // cuantos elementos indico en la pagina
 const numPag = Math.ceil(elementsArray / itemPag);        // numeros de paginas redondeando hacia arriba
 let pagAct = 0; //pagina actual
 
+//Eventos de paginación
 
 previous.addEventListener('click', () => {
-
-
   if (pagAct - 1 < numPag) {
     pagAct--;
     removeChildNodes(container);
@@ -24,13 +29,11 @@ previous.addEventListener('click', () => {
   }
 })
 next.addEventListener('click', () => {
-
   if (pagAct + 1 < numPag) {
     pagAct++;
     removeChildNodes(container);
     fetchGots();
   }
-
 })
 
 function fetchGots() {
@@ -58,30 +61,29 @@ function removeChildNodes(parent) {
 }
 fetchGots();
 
-
 //BUSCADOR
-
+//Constantes necesarias
 const search =document.getElementById("search")
-const buttonSearch=document.getElementById("btnsearch")
 
-buttonSearch.addEventListener("click", function () {
-  const searched=search.value;
+//Evento buscador
+search.addEventListener("keyup", function () {
+  const filteredData = searcher.filterFamily(search.value);
   const resultsList = document.querySelector('.card');
-  const filteredData = data.got.filter(item => item.firstName.includes(searched));
-
-  resultsList.innerHTML = "";
   
-  console.log(filteredData);
+  //TODO Explicar a mimi que esto paso para data 
+  //const filteredData = data.got.filter(item => item.fullName.toLowerCase().includes(searched.toLowerCase()));
+  
+  resultsList.innerHTML = "";
 
+  //console.log(filteredData);
   filteredData.forEach(item => {
     return container.innerHTML += `<figure >
-<img class="imagen" src=${item.imageUrl}>
-<figcaption>${item.fullName}</figcaption>
-</figure>`
+    <img class="imagen" src=${item.imageUrl}>
+    <figcaption>${item.fullName}</figcaption>
+    </figure>`
   });
 })
 //console.log(searched);
-
 
 //SELECTORES:
 //Funciones para selectores.
@@ -91,11 +93,9 @@ const familySelection=document.getElementById("house")
 familySelection.addEventListener("change", function(){
   const resultsList = document.querySelector('.card');
   const selectedHouse =familySelection.value;
-  //console.log (selectedHouse);
-  const legacy = data.got.filter(item=> item.family.includes(selectedHouse));
-
+ 
   resultsList.innerHTML = "";
-
+  const legacy= houseFilter.cards(selectedHouse) //TODO esta es la linea que conecta con data (la declaracion de la variable nos trae el resultado de llamar a la función)
   //console.log(legacy);
   legacy.forEach(item => {
     return container.innerHTML += `<figure >
@@ -106,13 +106,11 @@ familySelection.addEventListener("change", function(){
 });
 
 
-
-
-const orderSelection=document.getElementById("order")
+/*const orderSelection=document.getElementById("order")
 orderSelection.addEventListener("change", function(){
   const selectedOrder =orderSelection.value;
-  console.log (selectedOrder);
-});
+ // console.log (selectedOrder);
+});*/
 
 
 //const familyWords = document.querySelector('.words')
