@@ -86,7 +86,7 @@ export default{
       "lastName": "Lannister",
       "fullName": "Jamie Lannister",
       "title": "Lord Commander of the Kingsguard",
-      "family": "House Lannister",
+      "family": "Lannister",
       "imageUrl": "https://thronesapi.com/assets/images/jaime-lannister.jpg",
       "born": "262 DC",
       "death": "305 DC"
@@ -97,7 +97,7 @@ export default{
       "lastName": "Lannister",
       "fullName": "Cersei Lannister",
       "title": "Lady of Casterly Rock",
-      "family": "House Lannister",
+      "family": "Lannister",
       "imageUrl": "https://thronesapi.com/assets/images/cersei.jpg",
       "born": "262 DC",
       "death": "305 DC"
@@ -140,7 +140,7 @@ export default{
       "lastName": "Baratheon",
       "fullName": "Joffrey Baratheon",
       "title": "King of the Seven Kingdoms, Protector of the Realm",
-      "family": "House Lanister",
+      "family": "Baratheon",
       "imageUrl": "https://thronesapi.com/assets/images/joffrey.jpg",
       "born": "286 DC",
       "death": "300 DC"
@@ -151,7 +151,7 @@ export default{
       "lastName": "Lannister",
       "fullName": "Tyrion Lannister",
       "title": "Hand of the Queen",
-      "family": "House Lanister",
+      "family": "Lannister",
       "imageUrl": "https://thronesapi.com/assets/images/tyrion-lannister.jpg",
       "born": "272 DC"
     },
@@ -172,7 +172,7 @@ export default{
       "lastName": "Baelish",
       "fullName": "Petyr Baelish",
       "title": "Master of Coin",
-      "family": "House Baelish",
+      "family": "Baelish",
       "imageUrl": "https://thronesapi.com/assets/images/littlefinger.jpg",
       "born": "264 AL",
       "death": "305 AL"
@@ -203,7 +203,7 @@ export default{
       "lastName": "Unknown",
       "fullName": "Varys",
       "title": "Master of Whisperers",
-      "family": "King's Council",
+      "family": "King's council",
       "imageUrl": "https://thronesapi.com/assets/images/varys.jpg",
       "born": null
     },
@@ -422,7 +422,7 @@ export default{
       "lastName": "The Red Woman",
       "fullName": "Melisandre",
       "title": "Melisandre of Asshai",
-      "family": "Sourceres",
+      "family": "Sorcerers",
       "imageUrl": "https://thronesapi.com/assets/images/melisandre.jpg",
       "born": null
     },
@@ -432,7 +432,7 @@ export default{
       "lastName": "H'ghar",
       "fullName": "Jaqen H'ghar",
       "title": "Faceless Men of Braavos",
-      "family": "Sourceres",
+      "family": "Sorcerers",
       "imageUrl": "https://thronesapi.com/assets/images/jaqen-hghar.jpg",
       "born": null
     },
@@ -503,7 +503,7 @@ export default{
       "lastName": "",
       "fullName": "Pycelle",
       "title": "Grand Maester of the Seven Kingdoms",
-      "family": "King's Council",
+      "family": "King's council",
       "imageUrl": "https://thronesapi.com/assets/images/pycelle.jpg",
       "born": "216 DC",
       "death": "300 DC"
