@@ -3,6 +3,8 @@
 import data from './data/got/got.js';
 import searcher from "./data.js"
 import { houseFilter } from './data.js';
+//import { changeBackColor } from "./color.js";
+//import motto from './data/got/motto.js';
 
 fetch(`./data/got/motto.json`)
   .then(response => response.json())
@@ -70,12 +72,8 @@ search.addEventListener("keyup", function () {
   const filteredData = searcher.filterFamily(search.value);
   const resultsList = document.querySelector('.card');
   
-  //TODO Explicar a mimi que esto paso para data 
-  //const filteredData = data.got.filter(item => item.fullName.toLowerCase().includes(searched.toLowerCase()));
-  
   resultsList.innerHTML = "";
 
-  //console.log(filteredData);
   filteredData.forEach(item => {
     return container.innerHTML += `<figure >
     <img class="imagen" src=${item.imageUrl}>
@@ -83,20 +81,19 @@ search.addEventListener("keyup", function () {
     </figure>`
   });
 })
-//console.log(searched);
 
 //SELECTORES:
-//Funciones para selectores.
-
 //Constantes y eventos de selectores.
+
 const familySelection=document.getElementById("house")
+
 familySelection.addEventListener("change", function(){
   const resultsList = document.querySelector('.card');
   const selectedHouse =familySelection.value;
  
   resultsList.innerHTML = "";
   const legacy= houseFilter.cards(selectedHouse) //TODO esta es la linea que conecta con data (la declaracion de la variable nos trae el resultado de llamar a la función)
-  //console.log(legacy);
+
   legacy.forEach(item => {
     return container.innerHTML += `<figure >
 <img class="imagen" src=${item.imageUrl}>
@@ -105,15 +102,20 @@ familySelection.addEventListener("change", function(){
   });
 });
 
+//TODO funcion que hara que cambie el color
 
-/*const orderSelection=document.getElementById("order")
-orderSelection.addEventListener("change", function(){
-  const selectedOrder =orderSelection.value;
- // console.log (selectedOrder);
-});*/
+//familySelection.addEventListener("change", changeBackColor.changeColor)
 
+//TODO funcion que conectara el mensaje con la casa.
 
-//const familyWords = document.querySelector('.words')
-//const autor = document.querySelector('.autor')
-//const shield= document.getElementById(shield)
-//const familyHistory= document.getElementById(history)
+/*familySelection.addEventListener("change", function(){
+  const resultsWords = document.querySelector('.words');
+  const selectedHouse =familySelection.value;
+ 
+  resultsWords.innerHTML = "";
+  const words= houseFilter.motto(selectedHouse) 
+
+  words.forEach(item => {
+    return Text.innerHTML +=
+    return words.textContent
+  });*/

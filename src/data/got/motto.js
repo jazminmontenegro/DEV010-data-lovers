@@ -2,7 +2,7 @@ export default {
     "motto":[
         {
             "id": 53,
-            "family": "House Targaryen",
+            "family": "Targaryen",
             "imageUrl": "https://static.wikia.nocookie.net/gameofthrones/images/1/1e/House_Targaryen.svg/revision/latest?cb=20221029110249",
             "motto": "Fire and Blod",
             "comment" : "- House Targaryen family words",
@@ -10,7 +10,7 @@ export default {
         },
         {
             "id": 54,
-            "family": "House Tarly",
+            "family": "Tarly",
          "imageUrl": "https://static.wikia.nocookie.net/gameofthrones/images/c/cc/House_Tarly.svg/revision/latest?cb=20221111182759",
         "motto": "First in Battle",
         "comment" : "-House Tarly family words",
@@ -18,7 +18,7 @@ export default {
         },
         {
         "id": 55,
-        "family": "House Stark",
+        "family": "Stark",
         "imageUrl":"https://static.wikia.nocookie.net/gameofthrones/images/7/7e/House_Stark.svg/revision/latest?cb=20221030093202",
         "motto": "Winter is Coming",
         "comment" : "-House Stark family words",
@@ -26,7 +26,7 @@ export default {
     },
     {
         "id": 56,
-        "family": "House Baratheon",
+        "family": "Baratheon",
         "imageUrl":"https://static.wikia.nocookie.net/gameofthrones/images/2/2d/House_Baratheon.svg/revision/latest?cb=20221030152823",
         "motto": "Ours is the Fury",
         "comment" : "-House Baratheon family words",
@@ -34,7 +34,7 @@ export default {
     },
     {
         "id": 57,
-        "family": "House Lannister",
+        "family": "Lannister",
         "imageUrl": "https://static.wikia.nocookie.net/gameofthrones/images/d/d5/House_Lannister.svg/revision/latest?cb=20221030142751",
         "motto": "A Lannister always pays his debts.",
         "comment" : "-House Lannister family words",
@@ -42,7 +42,7 @@ export default {
     },
     {
         "id": 58,
-        "family":"House Greyjoy",
+        "family":"Greyjoy",
         "imageUrl": "https://static.wikia.nocookie.net/gameofthrones/images/5/5b/House_Greyjoy.svg/revision/latest?cb=20221102104637",
         "motto": "We Do Not Sow",
         "comment" : "-House Greyjoy family words",
@@ -50,7 +50,7 @@ export default {
     },
     {
         "id": 59,
-        "family": "House Clegane",
+        "family": "Clegane",
         "imageUrl": "https://gameofthrones.fandom.com/wiki/House_Clegane?file=House_Clegane.svg",
         "motto": "The World Is Built By Killers... So You Better Get Used To Looking At Them.",
         "comment" : "-Sandor Clegane",
@@ -59,7 +59,7 @@ export default {
     },
     {
         "id": 60,
-        "family": "House Baelish",
+        "family": "Baelish",
         "imageUrl": "https://static.wikia.nocookie.net/gameofthrones/images/9/9e/House_Baelish.svg/revision/latest?cb=20221112111410",
         "motto": "We only make peace with our enemies… that's why it's called making peace.",
         "comment": "-Petyr Baelish ",
@@ -67,7 +67,7 @@ export default {
     },
     {
         "id": 61,
-        "family": "House Seaworth",
+        "family": "Seaworth",
         "imageUrl": "https://static.wikia.nocookie.net/gameofthrones/images/6/61/House_Seaworth.svg/revision/latest?cb=20221107094942",
         "motto": "If we don't put aside our enmities and band together, we will die. And then it doesn't matter whose skeleton sits on the Iron Throne.",
         "comment": "-Davos Seaworth ",
@@ -83,7 +83,7 @@ export default {
     },
     {
         "id": 63,
-        "family": "House Tyrell",
+        "family": "Tyrell",
         "imageUrl": "https://gameofthrones.fandom.com/wiki/House_Tyrell?file=House_Tyrell.svg",
         "motto": "Growing Strong",
         "comment": "-House Tyrell family words",

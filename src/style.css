@@ -29,9 +29,9 @@ p{
 
 nav {
   background-color: black;
-  padding-top:0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left:2rem ;
+  padding-top:1rem;
+  padding-bottom: 1rem;
+  padding-right: 12rem ;
 }
 
 #navigator ul {
@@ -64,10 +64,6 @@ h3{
 #characters {  
   display: flex;
   flex-wrap: wrap;
-  }
-
-  #counter {
-    padding: 1rem;
   }
 
 h2 {
@@ -170,7 +166,6 @@ figcaption {
 }
 main {
   width: 100%;
-   /* esta medida solo esta colocada para observar mejor el dise;o, mientras aparecen las cards*/
   background-color: rgb(236, 176, 133);
   background-image: url(data/imagenes/westeros.jpg);
   background-size: cover;
@@ -194,9 +189,15 @@ h3{
   margin-right: 10%;
 }
 
-#counter {
-  padding-bottom: 1rem;
+#pages {
+  padding: 1rem;
   text-align: center;
+}
+#counter {
+  padding: 1rem;
+  text-align: center;
+  background-color: black;
+  color: white;
 }
 
 h2 {
@@ -228,6 +229,11 @@ aside {
   h4{
     text-justify: distribute-all-lines;
   }
+
+  .homeland {
+    display:none;
+  }
+
   #history {
     width:60%;
     padding:1rem;
