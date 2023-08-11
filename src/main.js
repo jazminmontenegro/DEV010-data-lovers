@@ -114,10 +114,22 @@ search.addEventListener("keyup", function () {
   resultsList.innerHTML = "";
 
   filteredData.forEach(item => {
-    return container.innerHTML += `<figure >
-    <img class="imagen" src=${item.imageUrl}>
-    <figcaption>${item.fullName}</figcaption>
-    </figure>`
+    return container.innerHTML += `<section class="flip-card">
+      <section class="flip-card-inner">
+        <section class="flip-card-front">
+          <figure >
+            <img class="imagen" src=${item.imageUrl}>
+            <figcaption>${item.fullName}</figcaption>
+          </figure>
+        </section>
+        <section class="flip-card-back">
+          <figcaption><br> ${item.fullName}</figcaption>
+          <figcaption><hr><br>Title :${item.title}</figcaption>
+          <figcaption><br>Family: ${item.family}</figcaption>
+          <figcaption><br>Born: ${item.born}</figcaption>
+        </section>
+      </section>
+    </section> `
   });
 })
 
@@ -134,10 +146,22 @@ familySelection.addEventListener("change", function(){
   const legacy= houseFilter.cards(selectedHouse) //TODO esta es la linea que conecta con data (la declaracion de la variable nos trae el resultado de llamar a la función)
 
   legacy.forEach(item => {
-    return container.innerHTML += `<figure >
-<img class="imagen" src=${item.imageUrl}>
-<figcaption>${item.fullName}</figcaption>
-</figure>`
+    return container.innerHTML += `<section class="flip-card">
+    <section class="flip-card-inner">
+      <section class="flip-card-front">
+        <figure >
+          <img class="imagen" src=${item.imageUrl}>
+          <figcaption>${item.fullName}</figcaption>
+        </figure>
+      </section>
+      <section class="flip-card-back">
+        <figcaption><br> ${item.fullName}</figcaption>
+        <figcaption><hr><br>Title :${item.title}</figcaption>
+        <figcaption><br>Family: ${item.family}</figcaption>
+        <figcaption><br>Born: ${item.born}</figcaption>
+      </section>
+    </section>
+  </section> `
   });
 });
 
