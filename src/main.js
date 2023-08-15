@@ -1,20 +1,13 @@
 //IMPORTACION DE BASES DE DATOS Y OTROS ARCHIVOS
 
 import data from './data/got/got.js';
-import {searcher} from "./data.js";
-import { houseFilter } from './data.js';
-
-//import { changeBackColor } from "./color.js";
-//import motto from './data/got/motto.js';
-
-//TODO  fetch(`./data/got/motto.json`)
-//TODO .then(response => response.json())
+//import dataMotto from "./data/got/motto.js";
+import {searcher, houseFilter, mottoFilter, sortData} from "./data.js";
 
 //VISUALIZACIÓN Y PAGINACIÓN
 //Constantes necesarias
 
 const container = document.querySelector('.card')
-//const search = document.querySelector('.search')
 const previous = document.querySelector('.previous')
 const next = document.querySelector('.next')
 
@@ -25,12 +18,6 @@ let pagAct = 0; //pagina actual
 
 //Eventos de paginación
 // capturar datos de los botone y input
-
-
-/*search.addEventListener('keyup', () => { // Registra un evento a un objeto en específico
-  removeChildNodes(container)            // limpiar el container
-  fetchGots(buscar(data, search.value.toLowerCase())) // buscar en data, search.value
-})*/
 
 previous.addEventListener('click', () => {  //registra un envento en el objeto
 
@@ -55,7 +42,7 @@ function fetchGots(nuevaData) { // funcion para visualizar la data got con condi
     prueba = pagAct
   }
   for (let i = 0; i < itemPag; i++) {   // recorrer la data y crear cada card
-    let actual = (prueba * itemPag) + i;
+    const actual = (prueba * itemPag) + i;
     if (nuevaData.got) {
       if (actual >= nuevaData.got.length) return
       container.innerHTML +=`<section class="flip-card">
@@ -96,15 +83,9 @@ function fetchGots(nuevaData) { // funcion para visualizar la data got con condi
     }
   }
 }
-function removeChildNodes(parent) {   // proporcionaste es un fragmento de código en JavaScript que se utiliza para eliminar todos los nodos hijos de un elemento HTML específico.
-  while (parent.firstChild) {
-    parent.removeChild(parent.firstChild)
-  }
-}
-fetchGots(data);
 
-//BUSCADOR
-//Constantes necesarias
+
+//___________BUSCADOR_____________________________________________________________
 const search =document.getElementById("search")
 
 search.addEventListener("keyup", function () {
@@ -133,7 +114,7 @@ search.addEventListener("keyup", function () {
   });
 })
 
-//SELECTORES:
+//__________FILTRADO POR FAMILIA:___________________________________________________
 //Constantes y eventos de selectores.
 
 const familySelection=document.getElementById("house")
@@ -165,20 +146,96 @@ familySelection.addEventListener("change", function(){
   });
 });
 
-//TODO funcion que hara que cambie el color
+//Funcion que conecta con el mensaje con la casa.
 
-//familySelection.addEventListener("change", changeBackColor.changeColor)
-
-//TODO funcion que conectara el mensaje con la casa.
-
-/*familySelection.addEventListener("change", function(){
-  const resultsWords = document.querySelector('.words');
+familySelection.addEventListener("change", function(){
   const selectedHouse =familySelection.value;
- 
+  const resultsWords = document.querySelector(".words");
+  const resultShield = document.getElementById("shield");
+  const resultHistory = document.getElementById("history");
+  const resultComment =document.querySelector(".autor");
+  changeColor(selectedHouse)
+  
+
+  //a. limpiar contenidos de los espacios...
   resultsWords.innerHTML = "";
-  const words= houseFilter.motto(selectedHouse) 
+  resultComment.innerHTML= "";
+  resultShield.innerHTML = "";
+  resultHistory.innerHTML= "";
+
+  const words=mottoFilter.mottoFilterFunction(selectedHouse)
+
+  //b. Pintar la nueva informacion en los espacios...
 
   words.forEach(item => {
-    return Text.innerHTML +=
-    return words.textContent
-  });*/
+    resultsWords.innerHTML=`<p>"${item.motto}"</p>`
+  })
+
+  words.forEach(item => {
+    resultComment.innerHTML=`<h3>${item.comment}</h3>`
+  })
+  
+  words.forEach(item => {
+    resultShield.innerHTML+=`<img src="${item.imageUrl}" alt= "House Shield"></img>`
+  })
+
+  words.forEach(item => {
+    resultHistory.innerHTML+=`<p>${item.history}</p>`
+  })
+})
+
+//Cambio del color del background
+
+function changeColor(valueSelector) {
+//  const selectedHouse2 = familySelection.value;
+  let mainColor ="";
+
+  if (valueSelector === "Baelish" || valueSelector === "Baratheon" || valueSelector === "Clegane"){
+    mainColor = "	#CCAD2A";
+  } 
+  else if (valueSelector === "Lannister"||valueSelector=== "Bolton"|| valueSelector === "Targaryen"){
+    mainColor= "#BD2E31";
+  } 
+  else if (valueSelector === "Stark"||valueSelector === "Greyjoy"|| valueSelector === "Seaworth"){
+    mainColor= "#828282";
+  } 
+  else if (valueSelector === "Tarly"||valueSelector === "Tyrell"|| valueSelector=== "Mormont"){
+    mainColor= "#008F39";
+  }
+  else if (valueSelector === "Tarth"){
+    mainColor="#3B83BD";
+  }  
+  else if (valueSelector === "Martell"){
+    mainColor= "#ED7700";
+  }
+  document.querySelector('main').style.backgroundColor = mainColor
+
+}
+
+//___________________________ORDENAR______________________________________
+//Constantes y eventos de ordenar.
+
+const order=document.getElementById("order")
+
+order.addEventListener('input',() =>{
+  removeChildNodes(container)
+  fetchGots(sortData(data, order.value))
+
+})
+
+/*const orderSelector= document.getElementById("order")
+
+orderSelector.addEventListener("change", function(){
+  const resultsList = document.querySelector('.card');
+  const selectionOrder =orderSelector.value;
+
+  resultsList.innerHTML = "";
+  const ordened= orderFunction.cards(selectionOrder) //TODO esta es la linea que conecta con data (la declaracion de la variable nos trae el resultado de llamar a la función)
+*/
+
+function removeChildNodes(parent) {   // proporcionaste es un fragmento de código en JavaScript que se utiliza para eliminar todos los nodos hijos de un elemento HTML específico.
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild)
+  }
+}
+fetchGots(data);

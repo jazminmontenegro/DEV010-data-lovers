@@ -1,4 +1,5 @@
 import data from './data/got/got.js';
+import data2 from "./data/got/motto.js";
 
 export const searcher = {
 
@@ -14,22 +15,42 @@ export const houseFilter= {
     const result = data.got.filter(item=> item.family.includes(x));
     return result
   },
-
-  /*
-  motto: function (y) {
-//TODO funcion de cambiar texto por familia. Por hacer/ opcional.
-  },
-
-  shield: function (w){
-//TODO funcion de cambiar escudo por familia. Por hacer/ opcional.
-  },
-
-  history: function (h){
-//TODO funcion de cambiar historia por familia. Por hacer/opcional.
-  }*/
 }
 
-// export const order= {}   //TODO funcion de ordenar, por hacer.
+export const mottoFilter= {
+
+  mottoFilterFunction: function (g) {
+    const mottoResult = data2.motto.filter(item=> item.family.includes(g));
+    return mottoResult
+  },
+}
+
+export function sortData(data,order){
+  const orderData = data;
+
+  const sorted = orderData.got.sort((a, b) => {
+    const fullNameA = a.fullName.toLowerCase();
+    const fullNameB = b.fullName.toLowerCase();
+    //console.log(fullNameA, fullNameB);
+    if (fullNameA < fullNameB) {
+      return -1;
+    }
+    if (fullNameA > fullNameB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  if (order === 'ascendent') {
+    // console.log(prueba);
+    return sorted
+  }
+  if (order === 'descendent') {
+    //console.log([...sorted].reverse());
+    return [...sorted].reverse()
+  }
+}
+
 
 // export const survivors= {} //TODO funcion de conteo, por hacer.
 

@@ -1,26 +1,25 @@
-import data from './data/got/motto.js';
+const changeColor = {
 
-const changeBackColor = {
-
-  changeColor: function() {
-  const main = document.main; 
-  if (selector.value === "Baelish"||selector.value === "Baratheon"|| selector.value === "Clegane"){
-    main.style.backgroundColor="#FF0000";
-  } 
-  else if (selector.value === "Lannister"||selector.value === "Bolton"|| selector.value === "Targaryen"){
-    main.style.backgroundColor= "#cf010b";
-  } 
-  else if (selector.value === "Stark"||selector.value === "Greyjoy"|| selector.value === "Seaworth"){
-    main.style.backgroundColor= "#828282";
-  } 
-  else if (selector.value === "Tarly"||selector.value === "Tyrell"|| selector.value === "Mormont"){
-    main.style.backgroundColor= "#008F39";
+  backColor: function(select) {
+    const mainColor=document.querySelector(".principal")
+    if (select=== "Baelish"||select=== "Baratheon"|| select=== "Clegane"){
+      mainColor.style.backgroundColor="#FF0000";
+    } 
+    else if (select === "Lannister"||select === "Bolton"|| select === "Targaryen"){
+      mainColor.style.backgroundColor= "#cf010b";
+    } 
+    else if (select === "Stark"||select === "Greyjoy"|| select === "Seaworth"){
+      mainColor.style.backgroundColor= "#828282";
+    } 
+    else if (select === "Tarly"||select === "Tyrell"|| select=== "Mormont"){
+      mainColor.style.backgroundColor= "#008F39";
+    }
+    else if (select === "Tarth"){
+      mainColor.style.backgroundColor="#3B83BD";
+    }  else if (select === "Martell"){
+      mainColor.style.backgroundColor= "#FF8000";
+    }
   }
-  else if (selector.value === "Tarth"){
-    main.style.backgroundColor="#3B83BD";
-  }  else if (selector.value === "Martell"){
-    main.style.backgroundColor= "#FF8000";
-  }
-})}
+}
 
-export default changeBackColor
+export default changeColor
