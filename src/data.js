@@ -12,7 +12,7 @@ export function houseFilter(data, filter) {
 
 export function sortData(data, order) {
   const orderData = data;//ca,bie era let por si acaso
-  console.log(orderData)
+  //console.log(orderData)
   const prueba = orderData.got.sort((a, b) => {
     const fullNameA = a.fullName.toLowerCase();
     const fullNameB = b.fullName.toLowerCase();
