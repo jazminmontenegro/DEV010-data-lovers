@@ -2,49 +2,44 @@
 import data from './data/got/got.js';
 import { filterData } from './data.js';
 //import  dataOrder from './data.js';
- import { houseFilter } from './data.js';
- import { sortData } from './data.js';
+import { houseFilter } from './data.js';
+import { sortData } from './data.js';
 
 const container = document.querySelector('.card')
 const search = document.querySelector('.search')
 const previous = document.querySelector('.previous')
 const next = document.querySelector('.next')
-const familySelection=document.getElementById('house')
-const order=document.querySelector('.order')
+const familySelection = document.getElementById('house')
+const order = document.querySelector('.order')
 
-
-
-
-let elementsArray = data.got.length; //elemtos de la api
-let itemPag = 12;     // cuantos elementos indico en la pagina
-let numPag = Math.ceil(elementsArray / itemPag);        // MATH para redondear, numeros de paginas redondeando hacia arriba
+const elementsArray = data.got.length; //elemtos de la api
+const itemPag = 12;     // cuantos elementos indico en la pagina
+const numPag = Math.ceil(elementsArray / itemPag);        // MATH para redondear, numeros de paginas redondeando hacia arriba
 let pagAct = 0; //pagina actual
 
 
 
 // capturar datos de los botone y input
 
-
-
 search.addEventListener('keyup', () => { // Registra un evento a un objeto en específico
   removeChildNodes(container)    // limpiar el container
   fetchGots(filterData(data, search.value.toLowerCase()))// buscar en data, search.value
 })
 
-familySelection.addEventListener('click', ()=>{ /// filtrar por lista
-   removeChildNodes(container)
-   fetchGots(houseFilter(data, familySelection.value))
-   //const filteredData = houseFilter(data, filter);
-   //console.log(filteredData)
-   //forEach((houseFilter) => {
+familySelection.addEventListener('click', () => { /// filtrar por lista
+  removeChildNodes(container)
+  fetchGots(houseFilter(data, familySelection.value))
+  //const filteredData = houseFilter(data, filter);
+  //console.log(filteredData)
+  //forEach((houseFilter) => {
   //
- //});
+  //});
 
 
 })
 
 
-order.addEventListener('input',() =>{
+order.addEventListener('input', () => {
   removeChildNodes(container)
   fetchGots(sortData(data, order.value))
 
@@ -76,7 +71,7 @@ function fetchGots(nuevaData) { // funcion para visualizar la data got con condi
     prueba = pagAct
   }
   for (let i = 0; i < itemPag; i++) {   // recorrer la data y crear cada card
-    let actual = (prueba * itemPag) + i;
+    const actual = (prueba * itemPag) + i;
 
     if (nuevaData.got) {
       if (actual >= nuevaData.got.length) return
@@ -97,10 +92,10 @@ function fetchGots(nuevaData) { // funcion para visualizar la data got con condi
   </section>`
     }
 
-   else  {
-     if (actual >= nuevaData.length)
+    else {
+      if (actual >= nuevaData.length)
         return
-        container.innerHTML += `<section class="flip-card">
+      container.innerHTML += `<section class="flip-card">
         <section class="flip-card-inner">
         <section class="flip-card-front"><figure >
   <img class="imagen" src=${nuevaData[actual].imageUrl}>
@@ -119,7 +114,7 @@ function fetchGots(nuevaData) { // funcion para visualizar la data got con condi
 
   }
 
-  }
+}
 
 function removeChildNodes(parent) {   // proporcionaste es un fragmento de código en JavaScript que se utiliza para eliminar todos los nodos hijos de un elemento HTML específico.
   while (parent.firstChild) {

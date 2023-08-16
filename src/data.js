@@ -1,23 +1,17 @@
 
 export function filterData(data, palabra) {  //funcion buscar
-  return data.got.filter(index => index.fullName.toLowerCase().includes(palabra)) //retorna Esto se utiliza para filtrar el arreglo en base a una condición. Se creará un nuevo arreglo con los elementos que cumplan con la condición.
+  const filterlook= data.got.filter(index => index.fullName.toLowerCase().includes(palabra)) //retorna Esto se utiliza para filtrar el arreglo en base a una condición. Se creará un nuevo arreglo con los elementos que cumplan con la condición.
+  return filterlook
 }
+
 
 export function houseFilter(data, filter) {
   return data.got.filter(item => item.family.includes(filter));
 
 }
-/*export function houseFilter() {
-  const familyFilter=  data.got.map( (house) => house.family );
-  const familyFilters=  familyFilter.filter((family,filter)=>{
-     return familyFilters.indexOf(family)===filter;
-  })
-  return familyFilters
-}*/
 
-
-export function  sortData(data,order){
-  let orderData = data;
+export function sortData(data, order) {
+  const orderData = data;//ca,bie era let por si acaso
   console.log(orderData)
   const prueba = orderData.got.sort((a, b) => {
     const fullNameA = a.fullName.toLowerCase();
@@ -32,12 +26,12 @@ export function  sortData(data,order){
 
     return 0;
   });
-  if (order == 'Ascendente') {
+  if (order === 'Ascendente') {
     // console.log(prueba);
     return prueba
   }
-  if (order == 'Descendente') {
-     console.log([...prueba].reverse());
+  if (order === 'Descendente') {
+    //console.log([...prueba].reverse());
     return [...prueba].reverse()
   }
   //console.log(orderData);
