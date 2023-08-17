@@ -10,14 +10,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 </head>
-  <body>
-    <header>
-       <img id="banner" class="banner" src="data/imagenes/logoGame.jpg" alt="">
-    </header>
-    <nav id="navigator">
-      <ul>
-            <li><input id="search" type="search" name="searchCharacter" placeholder="Character">
-            </li>
+
+<body>
+  <header>
+    <div id="root"></div>
+    <img class="banner" src="data/imagenes/logoGame.jpg" alt="">
+  </header>
+  <nav id="navigator">
+    <ul>
+      <li id="search"><input class="search" name="searchCharacter" placeholder="Character">
+      </li>
             <li id="familySelector">
                <select id= "house" name="Family">
                     <option value="" selected disabled>Filter by house</option>
@@ -37,17 +39,19 @@
                     <option value="Tyrell">Tyrell</option>
                     <option value="" >---others--</option>
                     <option value="Free Folk">Free Folk</option>
+                    <option value="freedmen">Freedmen</option>
                     <option value="King's council">King's council</option>
                     <option value="Sorcerers">Sorcerers</option>
                 </select>
             </li>
             <li>
-                <select id="order" name="selector">
-                    <option value="" selected disabled>Order by...</option>
-                    <option value="alphabetically">Alphabetically</option>
-                    <option value="Born">Born date</option>
-                    <option value="Death">Death date</option>
-                </select>
+              <select class="order" name="Order">
+                <option value="" selected disabled>Order by...</option>
+                <option value="Ascendente">Alphabetically A-Z</option>
+                <option value="Descendente">Alphabetically Z-A</option>
+                <!--<option value="Born">Born date</option>
+                <option value="Death">Death date</option>-->
+              </select>
             </li>
         </ul>
     </nav>
@@ -66,14 +70,14 @@
         <h2>Game of Thrones survivors:<span id="survivors"></span></h2>
       </section>
     </main>
-    <aside class="homeland"> 
+    <aside class="homeland">
       <section id="container">
-        <article id="shield"><img src="data/imagenes/stark.jpg" width="200px" height="200px"> <!--AQUI VA UNA IMAGEN CAMBIANTE--></article>
-        <article id="history"> <!--AQUI VA TEXTO CAMBIANTE DE ACUERDO A LA CASA -->House Stark of Winterfell is one of the Great Houses of Westeros and the principal noble house of the north. In days of old they ruled as Kings of Winter, but since Aegon's Conquest they have been Wardens of the North and ruled as Lords of Winterfell. Their seat, Winterfell, is an ancient castle renowned for its strength.</article>
+        <article id="shield"><img src="data/imagenes/stark.jpg" width="200px" height="200px"></article>
+        <article id="history">House Stark of Winterfell is one of the Great Houses of Westeros and the principal noble house of the north. In days of old they ruled as Kings of Winter, but since Aegon's Conquest they have been Wardens of the North and ruled as Lords of Winterfell. Their seat, Winterfell, is an ancient castle renowned for its strength.</article>
     </section>
     </aside>
     <footer>
-      <p>Made by fans, for Game of Thrones fans. Under "Fair Use" for being made for educational purposes. <br> All rights to the images used for this purpose belong to George R.R. Martin and his producers.</p>
+      <p>Made by fans, for Game of Thrones fans. Under "Fair Use" for being made for educational purposes. <br> All rights to the images used for this purpose belong to their authors.</p>
     </footer>
     <script src="main.js" type="module"></script>
     <script src="./data/got/motto.js" type="module"></script>

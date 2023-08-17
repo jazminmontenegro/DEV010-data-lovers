@@ -1,36 +1,59 @@
-import data from './data/got/got.js';
+import data2 from "./data/got/motto.js";
 
-export const searcher = {
 
-  searchData: function (searched) {
-    const filteredData = data.got.filter(item => item.fullName.toLowerCase().includes(searched.toLowerCase()));
-    return filteredData
+export function filterData(data, palabra) {  //funcion buscar
+  const filterlook= data.got.filter(index => index.fullName.toLowerCase().includes(palabra)) //retorna Esto se utiliza para filtrar el arreglo en base a una condición. Se creará un nuevo arreglo con los elementos que cumplan con la condición.
+  return filterlook
+
+}
+
+export function houseFilter(data, filter) {
+  return data.got.filter(item => item.family.includes(filter));
+}
+
+export const mottoFilter= {
+
+  mottoFilterFunction: function (g) {
+    const mottoResult = data2.motto.filter(item=> item.family.includes(g));
+    return mottoResult
+  },
+}
+
+export function sortData(data, order) {
+  const orderData = data;//ca,bie era let por si acaso
+  //console.log(orderData)
+  const prueba = orderData.got.sort((a, b) => {
+    const fullNameA = a.fullName.toLowerCase();
+    const fullNameB = b.fullName.toLowerCase();
+    //console.log(fullNameA, fullNameB);
+    if (fullNameA < fullNameB) {
+      return -1;
+    }
+    if (fullNameA > fullNameB) {
+      return 1;
+    }
+
+    return 0;
+  });
+  if (order === 'Ascendente') {
+    // console.log(prueba);
+    return prueba
   }
+  if (order === 'Descendente') {
+    //console.log([...prueba].reverse());
+    return [...prueba].reverse()
+  }
+  //console.log(orderData);
 }
 
-export const houseFilter= {
 
-  cards: function (x) {
-    const result = data.got.filter(item=> item.family.includes(x));
-    return result
-  },
 
-  /*
-  motto: function (y) {
-//TODO funcion de cambiar texto por familia. Por hacer/ opcional.
-  },
 
-  shield: function (w){
-//TODO funcion de cambiar escudo por familia. Por hacer/ opcional.
-  },
 
-  history: function (h){
-//TODO funcion de cambiar historia por familia. Por hacer/opcional.
-  }*/
-}
 
-// export const order= {}   //TODO funcion de ordenar, por hacer.
 
-// export const survivors= {} //TODO funcion de conteo, por hacer.
 
-export default searcher
+
+
+
+

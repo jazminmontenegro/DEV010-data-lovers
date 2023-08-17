@@ -61,11 +61,16 @@ main {
   background-blend-mode: soft-light;
 }
 
+#phrase {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
 h1 {
   text-align: center;
   margin-top: 0rem;
   padding-top: 2rem;
-  padding-bottom: 0rem;
+  padding-bottom: 1rem;
   margin-bottom: 0rem;
 }
 
@@ -135,7 +140,7 @@ h3 {
     background-color: #201e1e;
     text-align: center;
   
-  }
+}
   
   /* Style the back side */
   .flip-card-back {
@@ -232,7 +237,7 @@ footer {
 
 
 
-/*Otros que no se donde van
+/*Otros que no se donde van*/
 
 a {
   text-decoration: none;
@@ -248,4 +253,4 @@ a:hover {
 
 .round {
   border-radius: 50%;
-}*/
+}
