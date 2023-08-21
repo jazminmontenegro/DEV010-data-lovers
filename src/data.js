@@ -13,8 +13,8 @@ export function houseFilter(data, filter) {
 
 export const mottoFilter= {
 
-  mottoFilterFunction: function (g) {
-    const mottoResult = data2.motto.filter(item=> item.family.includes(g));
+  mottoFilterFunction: function (familyName) {
+    const mottoResult = data2.motto.filter(item=> item.family.includes(familyName));
     return mottoResult
   },
 }
@@ -46,14 +46,18 @@ export function sortData(data, order) {
   //console.log(orderData);
 }
 
+export function calcSurvivors (newArrFam){
+  const totalElements = newArrFam.length; //total de elementos del array
 
+  let death = 0; //contador de muertes
+  
+  for (let i = 0; i < newArrFam.length; i++){
+    const item = newArrFam[i]
+    if (item.death !== undefined && item.death !== null)  {
+      death++;
+    }
+  }
+  const survivors = totalElements - death;
 
-
-
-
-
-
-
-
-
-
+  return survivors
+}
