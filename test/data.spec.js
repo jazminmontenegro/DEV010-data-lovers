@@ -1,7 +1,5 @@
 import { filterData,houseFilter,mottoFilter} from '../src/data.js';
 
-
-
 describe('funcion filterData', () => {
   it('is a function', () => {
     expect(typeof filterData).toBe('function');
