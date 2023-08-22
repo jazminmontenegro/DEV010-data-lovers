@@ -1,8 +1,11 @@
 //IMPORTACION DE BASES DE DATOS Y OTROS ARCHIVOS
 
 import data from './data/got/got.js'; //import dataMotto from "./data/got/motto.js";
-import { filterData, houseFilter, sortData, mottoFilter, calcSurvivors } from './data.js';
-
+import { filterData } from './data.js';
+//import  dataOrder from './data.js';
+import { houseFilter } from './data.js';
+import { sortData } from './data.js';
+import {mottoFilter,calcSurvivors} from './data.js';
 //VISUALIZACIÓN Y PAGINACIÓN
 //Constantes necesarias
 
@@ -12,13 +15,13 @@ const next = document.querySelector('.next')
 const familySelection = document.getElementById('house')
 const order = document.querySelector('.order')
 const search =document.querySelector('.search')
-const survivorSpan= document.getElementById('survivors')
-
+const survivorSpan =document.getElementById('survivors')
 
 const elementsArray = data.got.length; //elemtos de la api
 const itemPag = 12;     // cuantos elementos indico en la pagina
 const numPag = Math.ceil(elementsArray / itemPag);        // MATH para redondear, numeros de paginas redondeando hacia arriba
 let pagAct = 0; //pagina actual
+
 
 
 //Eventos de paginación
@@ -28,25 +31,31 @@ search.addEventListener('keyup', () => { // Registra un evento a un objeto en es
   removeChildNodes(container)    // limpiar el container
   const newArrSearch = filterData(data, search.value.toLowerCase())
   fetchGots(newArrSearch)// buscar en data, search.value
-
   survivorSpan.textContent =  calcSurvivors(newArrSearch) 
 })
 
-familySelection.addEventListener('change', () => { /// filtrar por lista
+familySelection.addEventListener('input', () => { /// filtrar por lista
   removeChildNodes(container) 
   const newArrFam = houseFilter(data, familySelection.value)
   fetchGots(newArrFam)
 
   survivorSpan.textContent =  calcSurvivors(newArrFam) 
+
 })
 
-order.addEventListener('input', () => {
+order.addEventListener('input', () => {// ordenar de a-z y de z-a
   removeChildNodes(container)
   const newArrOrder = sortData(data, order.value)
   fetchGots(newArrOrder)
+  survivorSpan.textContent =  calcSurvivors(newArrOrder)
+ 
 
-  survivorSpan.textContent =  calcSurvivors(newArrOrder) 
 })
+
+// survivorSpan.addEventListener('',()=>{
+//   survivorSpan.textContent =  "hola"
+
+// })
 
 
 previous.addEventListener('click', () => {  //registra un envento en el objeto
@@ -114,7 +123,9 @@ function fetchGots(nuevaData) { // funcion para visualizar la data got con condi
         </section>
       </section>`
     }
+
   }
+
 }
 
 //Funcion que conecta con el mensaje con la casa.
@@ -128,14 +139,13 @@ familySelection.addEventListener("change", function(){
   changeColor(selectedHouse)
 
 
-
   //a. limpiar contenidos de los espacios...
   resultsWords.innerHTML = "";
   resultComment.innerHTML= "";
   resultShield.innerHTML = "";
   resultHistory.innerHTML= "";
 
-  const words=mottoFilter.mottoFilterFunction(selectedHouse)
+  const words=mottoFilter.mottoFilterFunction(undefined,selectedHouse)
 
   //b. Pintar la nueva informacion en los espacios...
 
