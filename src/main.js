@@ -5,7 +5,7 @@ import { filterData } from './data.js';
 //import  dataOrder from './data.js';
 import { houseFilter } from './data.js';
 import { sortData } from './data.js';
-import {mottoFilter} from './data.js';
+import {mottoFilter,calcSurvivors} from './data.js';
 //VISUALIZACIÓN Y PAGINACIÓN
 //Constantes necesarias
 
@@ -15,6 +15,7 @@ const next = document.querySelector('.next')
 const familySelection = document.getElementById('house')
 const order = document.querySelector('.order')
 const search =document.querySelector('.search')
+const survivorSpan =document.getElementById('survivors')
 
 const elementsArray = data.got.length; //elemtos de la api
 const itemPag = 12;     // cuantos elementos indico en la pagina
@@ -28,20 +29,33 @@ let pagAct = 0; //pagina actual
 
 search.addEventListener('keyup', () => { // Registra un evento a un objeto en específico
   removeChildNodes(container)    // limpiar el container
-  fetchGots(filterData(data, search.value.toLowerCase()))// buscar en data, search.value
+  const newArrSearch = filterData(data, search.value.toLowerCase())
+  fetchGots(newArrSearch)// buscar en data, search.value
+  survivorSpan.textContent =  calcSurvivors(newArrSearch) 
 })
 
-familySelection.addEventListener('click', () => { /// filtrar por lista
+familySelection.addEventListener('input', () => { /// filtrar por lista
+  removeChildNodes(container) 
+  const newArrFam = houseFilter(data, familySelection.value)
+  fetchGots(newArrFam)
+
+  survivorSpan.textContent =  calcSurvivors(newArrFam) 
+
+})
+
+order.addEventListener('input', () => {// ordenar de a-z y de z-a
   removeChildNodes(container)
-  fetchGots(houseFilter(data, familySelection.value))
+  const newArrOrder = sortData(data, order.value)
+  fetchGots(newArrOrder)
+  survivorSpan.textContent =  calcSurvivors(newArrOrder)
+ 
 
 })
 
-order.addEventListener('input', () => {
-  removeChildNodes(container)
-  fetchGots(sortData(data, order.value))
+// survivorSpan.addEventListener('',()=>{
+//   survivorSpan.textContent =  "hola"
 
-})
+// })
 
 
 previous.addEventListener('click', () => {  //registra un envento en el objeto
@@ -131,7 +145,7 @@ familySelection.addEventListener("change", function(){
   resultShield.innerHTML = "";
   resultHistory.innerHTML= "";
 
-  const words=mottoFilter.mottoFilterFunction(selectedHouse)
+  const words=mottoFilter.mottoFilterFunction(undefined,selectedHouse)
 
   //b. Pintar la nueva informacion en los espacios...
 
