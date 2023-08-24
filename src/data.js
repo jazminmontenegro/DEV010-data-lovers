@@ -1,8 +1,8 @@
 import data2 from "./data/got/motto.js";
 
 
-export function filterData(data, palabra) {  //funcion buscar
-  const filterlook= data.got.filter(index => index.fullName.toLowerCase().includes(palabra)) //retorna Esto se utiliza para filtrar el arreglo en base a una condición. Se creará un nuevo arreglo con los elementos que cumplan con la condición.
+export function filterData(data, word) {  //funcion buscar
+  const filterlook= data.got.filter(index => index.fullName.toLowerCase().includes(word)) //retorna Esto se utiliza para filtrar el arreglo en base a una condición. Se creará un nuevo arreglo con los elementos que cumplan con la condición.
   return filterlook
 
 }
@@ -23,7 +23,7 @@ export const mottoFilter= {
 export function sortData(data, order) {
   const orderData = data;//ca,bie era let por si acaso
   //console.log(orderData)
-  const prueba = orderData.got.sort((a, b) => {
+  const proof = orderData.got.sort((a, b) => {
     const fullNameA = a.fullName.toLowerCase();
     const fullNameB = b.fullName.toLowerCase();
     //console.log(fullNameA, fullNameB);
@@ -38,11 +38,11 @@ export function sortData(data, order) {
   });
   if (order === 'Ascendente') {
     // console.log(prueba);
-    return prueba
+    return proof
   }
   if (order === 'Descendente') {
     //console.log([...prueba].reverse());
-    return [...prueba].reverse()
+    return [...proof].reverse()
   }
   //console.log(orderData);
 }

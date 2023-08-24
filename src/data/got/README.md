@@ -93,4 +93,30 @@ donde se evaluo:
 6. ciclos 
 7. operaciones 
 
+#prototipo de baja fidelidad
 
+![Baja Fidelidad](../imagenes/pro_bajaFidelidad.jpeg)
+
+# prototipo de Alta fidelidad
+
+![Alta Fidelidad](../imagenes/pro_altaFide.jpg)
+
+#Demas Prototipos
+
+![filtrado de datos](../imagenes/altafi1.png)
+
+#  filtrado de datos
+
+![filtrado de datos](../imagenes/altafi2.png)
+
+# buscado de Imagenes
+
+![Buscar Imagenes](../imagenes/altafi3.png)
+
+# contador
+
+![Contador](../imagenes/altafi4.png)
+
+# Interfaz primaria
+
+![interfaz primaria](../imagenes/altafi5.png)

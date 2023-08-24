@@ -39,8 +39,8 @@ describe('funcion filterData', () => {
           "born": "283 DC"
         },]}
 
-    const palabra= "daenerys targaryen"
-    expect(filterData(data, palabra)).toEqual( [{
+    const word= "daenerys targaryen"
+    expect(filterData(data, word)).toEqual( [{
       "id": 0,
       "firstName": "Daenerys",
       "lastName": "Targaryen",

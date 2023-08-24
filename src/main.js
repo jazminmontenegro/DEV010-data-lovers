@@ -52,12 +52,6 @@ order.addEventListener('input', () => {// ordenar de a-z y de z-a
 
 })
 
-// survivorSpan.addEventListener('',()=>{
-//   survivorSpan.textContent =  "hola"
-
-// })
-
-
 previous.addEventListener('click', () => {  //registra un envento en el objeto
 
   if (pagAct - 1 < numPag) { // Registra un evento a un objeto en específico
@@ -73,52 +67,52 @@ next.addEventListener('click', () => {
     fetchGots(data);
   }
 })
-function fetchGots(nuevaData) { // funcion para visualizar la data got con condiciones para que no se pasen ni antes ni despues del arary
-  let prueba = 0
+function fetchGots(newData) { // funcion para visualizar la data got con condiciones para que no se pasen ni antes ni despues del arary
+  let proof = 0
   if (Math.sign(pagAct) === -1) {  // Math.sign devuelve uno o -1
     pagAct = 0
   } else {
-    prueba = pagAct
+    proof = pagAct
   }
   for (let i = 0; i < itemPag; i++) {   // recorrer la data y crear cada card
-    const actual = (prueba * itemPag) + i;
+    const actual = (proof * itemPag) + i;
 
-    if (nuevaData.got) {
-      if (actual >= nuevaData.got.length) return
+    if (newData.got) {
+      if (actual >= newData.got.length) return
       container.innerHTML +=`<section class="flip-card">
         <section class="flip-card-inner">
           <section class="flip-card-front">
             <figure >
-              <img class="imagen" src=${nuevaData.got[actual].imageUrl}>
-              <figcaption>${nuevaData.got[actual].fullName}</figcaption>
+              <img class="imagen" src=${newData.got[actual].imageUrl}>
+              <figcaption>${newData.got[actual].fullName}</figcaption>
             </figure>
           </section>
           <section class="flip-card-back">
-            <figcaption><br> ${nuevaData.got[actual].fullName}</figcaption>
-            <figcaption><hr><br>Title :${nuevaData.got[actual].title}</figcaption></figcaption>
-            <figcaption><br>Family: ${nuevaData.got[actual].family}</figcaption>
-            <figcaption><br>Born: ${nuevaData.got[actual].born}</figcaption>
+            <figcaption><br> ${newData.got[actual].fullName}</figcaption>
+            <figcaption><hr><br>Title :${newData.got[actual].title}</figcaption></figcaption>
+            <figcaption><br>Family: ${newData.got[actual].family}</figcaption>
+            <figcaption><br>Born: ${newData.got[actual].born}</figcaption>
           </section>
         </section>
       </section>`
     }
 
     else {
-      if (actual >= nuevaData.length)
+      if (actual >= newData.length)
         return
       container.innerHTML += `<section class="flip-card">
         <section class="flip-card-inner">
           <section class="flip-card-front">
             <figure >
-              <img class="imagen" src=${nuevaData[actual].imageUrl}>
-              <figcaption>${nuevaData[actual].fullName}</figcaption>
+              <img class="imagen" src=${newData[actual].imageUrl}>
+              <figcaption>${newData[actual].fullName}</figcaption>
             </figure>
           </section>
           <section class="flip-card-back">
-            <figcaption><br> ${nuevaData[actual].fullName}</figcaption>
-            <figcaption><hr><br>Title :${nuevaData[actual].title}</figcaption>
-            <figcaption><br>Family: ${nuevaData[actual].family}</figcaption>
-            <figcaption><br>Born: ${nuevaData[actual].born}</figcaption>
+            <figcaption><br> ${newData[actual].fullName}</figcaption>
+            <figcaption><hr><br>Title :${newData[actual].title}</figcaption>
+            <figcaption><br>Family: ${newData[actual].family}</figcaption>
+            <figcaption><br>Born: ${newData[actual].born}</figcaption>
           </section>
         </section>
       </section>`
@@ -145,12 +139,14 @@ familySelection.addEventListener("change", function(){
   resultShield.innerHTML = "";
   resultHistory.innerHTML= "";
 
+
   const words=mottoFilter.mottoFilterFunction(undefined,selectedHouse)
 
   //b. Pintar la nueva informacion en los espacios...
 
   words.forEach(item => {
     resultsWords.innerHTML=`<p>"${item.motto}"</p>`
+   
   })
 
   words.forEach(item => {
@@ -191,7 +187,7 @@ function changeColor(valueSelector) {
     mainColor= "#ED7700";
   }
   document.querySelector('main').style.backgroundColor = mainColor
-
+ 
 }
 
 
